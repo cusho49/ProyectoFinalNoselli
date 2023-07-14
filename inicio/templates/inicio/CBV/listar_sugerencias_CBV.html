@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Sugerencias</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Listado de sugerencias
+{% endblock h1_header %}
+
+{% block contenido %}
+<button>
+    <a class="navbar-brand" href={% url 'inicio:crear_sugerencia' %}>Crear sugerencia</a>
+</button>
+{% comment %} <form action="" method="get">
+    {{formulario}}
+    <button>Buscar</button>
+</form> {% endcomment %}
+
+{% if sugerencias %}
+{% for sugerencia in sugerencias %}
+<li>
+    {{sugerencia}}
+    <button>
+        <a class="navbar-brand" href={% url 'inicio:mostrar_sugerencia' sugerencia.id %}>Ver mas</a>
+    </button>
+    <button>
+        <a class="navbar-brand" href={% url 'inicio:modificar_sugerencia' sugerencia.id %}>Modificar</a>
+    </button>
+    <button>
+        <a class="navbar-brand" href={% url 'inicio:eliminar_sugerencia' sugerencia.id %}>Eliminar</a>
+    </button>
+</li>
+{% endfor %}
+{% else %}
+<p>No se encontraron datos cargados.</p>
+{% endif %}
+{% endblock contenido %}

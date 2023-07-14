@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Lanzamientos</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Últimos lanzamientos
+{% endblock h1_header %}
+
+{% block contenido %}
+{% load static %}
+<h3>Todos los lanzamientos de Facundo Noselli</h3>
+<div style="background-color: #7df0ff; padding: 20px;">
+    <img src="{% static '/static/assets/img/FINRemixes.jpg' %}" alt="" width="150" height="150" align="right">
+    <h1>Primer Lanzamiento</h1>
+    <h6>Musica de Cuarentena - Facundo Noselli</h6>
+    <p>10/4/20</p>
+    <button onclick="window.location.href='https://open.spotify.com/track/2Gq7Xne2KeW6kaEFFPCQvL?si=f7b39f6ccdec4468'">Reproducir</button>
+</div>
+<div style="background-color: #c885ff; padding: 20px;">
+    <img src="{% static '/static/assets/img/recomenda.PNG' %}" alt="" width="150" height="150" align="right">
+    <h1>Recomendado</h1>
+    <h6>I feel it coming X Sin señal - Facundo Noselli</h6>
+    <p>9/3/23</p>
+    <button onclick="window.location.href='https://youtu.be/vXuCCOtuNDY'">Reproducir</button>
+</div>
+<ul class="list-inline mb-2">
+    <li class="list-inline-item"><a href="{% url 'inicio:nada' %}">Ver más</a></li>
+</ul>
+{% endblock contenido %}

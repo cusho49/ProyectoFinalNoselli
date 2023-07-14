@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Sugerencias</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Eliminar sugerencia
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action={% url 'inicio:eliminar_sugerencia' sugerencia.id %} method="POST">
+    {% csrf_token %}
+    <p>Confirma el borrado de {{sugerencia}}</p>
+    <button>Confirmar</button>
+</form>
+{% endblock contenido %}

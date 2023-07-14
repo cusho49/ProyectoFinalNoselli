@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Sugerencias</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Modificar sugerencia
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action={% url 'inicio:modificar_sugerencia' sugerencia.id %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <button>Modificar</button>
+</form>
+{% endblock contenido %}

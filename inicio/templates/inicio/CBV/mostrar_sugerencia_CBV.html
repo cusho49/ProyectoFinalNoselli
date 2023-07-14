@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Sugerencia</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Sugerencia de {{sugerencia.nombre}}
+{% endblock h1_header %}
+
+{% block contenido %}
+<li>Edad: {{sugerencia.edad}}</li>
+<li>Descripcion: {{sugerencia.descripcion}}</li>
+{% endblock contenido %}
